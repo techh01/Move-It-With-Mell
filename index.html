@@ -1,148 +1,151 @@
 <meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Move It with Mell</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Outfit', sans-serif;
     }
 
     body {
-      background: #f0f4f8;
-      color: #1f2937;
+      background: #fff8f6;
+      color: #1f1f1f;
       line-height: 1.6;
     }
 
     header {
-      background: #ffffff;
-      padding: 1.5rem 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: linear-gradient(135deg, #d62828, #f77f00);
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-      font-size: 1.8rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      color: #0f172a;
+    }
+
+    nav {
+      margin-top: 1rem;
     }
 
     nav a {
-      margin-left: 1.5rem;
-      color: #64748b;
+      color: #fff;
       text-decoration: none;
+      margin: 0 1rem;
       font-weight: 500;
-      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #0f172a;
+      text-decoration: underline;
     }
 
     .hero {
-      padding: 5rem 2rem;
+      background: url('https://images.unsplash.com/photo-1616511021687-11c7f00babb4?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      padding: 6rem 2rem;
+      color: #fff;
       text-align: center;
-      background: linear-gradient(to right, #fdfcfb, #e2d1c3);
-      border-bottom-left-radius: 60px;
-      border-bottom-right-radius: 60px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
     }
 
     .hero h2 {
-      font-size: 2.75rem;
+      font-size: 3rem;
       font-weight: 700;
-      margin-bottom: 1rem;
-      color: #1e293b;
     }
 
     .hero p {
       font-size: 1.2rem;
-      color: #475569;
-      max-width: 600px;
-      margin: 0 auto;
+      margin-top: 1rem;
     }
 
     section {
       padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    section h3 {
-      font-size: 1.9rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-      color: #1e293b;
-    }
-
-    section p {
-      color: #475569;
+    h3 {
+      font-size: 2rem;
+      color: #d62828;
       margin-bottom: 1rem;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
+      margin-top: 2rem;
     }
 
     .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
-      transition: transform 0.2s ease;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      transition: transform 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
     }
 
     .cta {
-      background: #0f172a;
+      background: #f77f00;
       color: white;
+      padding: 3rem 2rem;
+      border-radius: 20px;
       text-align: center;
-      padding: 3.5rem 2rem;
-      border-radius: 2rem;
       margin: 4rem auto;
     }
 
     .cta h4 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      font-size: 2rem;
     }
 
     .cta a {
       display: inline-block;
-      background: #10b981;
-      color: white;
-      padding: 0.9rem 1.8rem;
-      border-radius: 9999px;
+      margin-top: 1rem;
+      background: #d62828;
+      padding: 0.8rem 1.6rem;
+      color: #fff;
       font-weight: 600;
       text-decoration: none;
-      transition: background 0.3s ease;
+      border-radius: 999px;
+      transition: background 0.3s;
     }
 
     .cta a:hover {
-      background: #059669;
+      background: #a4161a;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
       font-size: 0.9rem;
-      color: #9ca3af;
+      color: #555;
+      background: #fdf0ec;
     }
   </style>
 </head>
-
 <body>
   <header>
     <h1>Move It with Mell</h1>
@@ -154,48 +157,50 @@
   </header>
 
   <section class="hero">
-    <h2>Dance. Sweat. Repeat.</h2>
-    <p>Join Mell in high-energy dance fitness sessions -- virtual, on-demand, and in-person. Your joyful fitness journey starts here.</p>
+    <div class="hero-content">
+      <h2>Unleash Your Energy Through Dance</h2>
+      <p>High-vibe dance fitness sessions designed to make you feel empowered, energized, and alive.</p>
+    </div>
   </section>
 
   <section id="about">
-    <h3>Meet Mell</h3>
-    <p>Mell is a passionate dance fitness coach helping individuals move their bodies and elevate their energy. Whether you're dancing in the studio or from home, Mell's vibrant routines keep you coming back for more.</p>
+    <h3>About Mell</h3>
+    <p>Mell is a certified dance fitness instructor with a passion for helping women move confidently and joyfully. Her sessions are crafted with care, rhythm, and a touch of sass -- for all levels, shapes, and moods.</p>
   </section>
 
   <section id="classes">
-    <h3>Explore Our Classes</h3>
+    <h3>Our Sessions</h3>
     <div class="cards">
       <div class="card">
-        <h4>In-Studio</h4>
-        <p>Join us live in our vibrant studio setting. Feel the beat, the energy, and the community in person.</p>
+        <h4>Studio Vibes</h4>
+        <p>Feel the rhythm in a fun-filled group setting. Live classes with vibrant energy and great music.</p>
       </div>
       <div class="card">
-        <h4>Live Virtual</h4>
-        <p>Dance with us via Zoom from anywhere. Real-time feedback, full energy, no travel.</p>
+        <h4>Virtual Moves</h4>
+        <p>Join us from your living room. Zoom sessions with real-time feedback and support.</p>
       </div>
       <div class="card">
-        <h4>On-Demand</h4>
-        <p>Stream workouts anytime. Access a growing library of sessions that match your schedule and mood.</p>
+        <h4>On-Demand Fun</h4>
+        <p>Stream dance workouts anytime. Perfect for busy schedules and spontaneous energy bursts.</p>
       </div>
     </div>
   </section>
 
   <section class="cta">
-    <h4>Launching Fall 2025</h4>
-    <p>Be the first to know when the virtual studio goes live. Early sign-ups get exclusive perks!</p>
-    <a href="#">Join the Waitlist</a>
+    <h4>Launches Fall 2025</h4>
+    <p>Join the waitlist to get exclusive early access, discounts, and surprise bonuses!</p>
+    <a href="#">Get Notified</a>
   </section>
 
   <section id="contact">
-    <h3>Contact</h3>
+    <h3>Let's Connect</h3>
     <p>📧 Email: moveitwithmell@example.com</p>
-    <p>📍 Location: UK Based, Serving Worldwide</p>
+    <p>📍 Location: Based in the UK -- Moving With Women Worldwide</p>
+    <p>📱 Instagram: @moveitwithmell</p>
   </section>
 
   <footer>
-    &copy; 2025 Move It with Mell. Crafted with love and movement.
+    &copy; 2025 Move It with Mell. Dance your way to confidence and health.
   </footer>
 </body>
-
 </html>
